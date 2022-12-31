@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <title>Vector Tile Layers at Different Levels</title>
+    <link rel="stylesheet" href="node_modules/ol/ol.css">
+    <style>
+      .map {
+        width: 90%;
+        height: 600px;
+      }
+
+      #info {
+        z-index: 1;
+        opacity: 0;
+        position: absolute;
+        font-size: x-large;
+        top: 0;
+        right: 0;
+        margin: 0;
+        background: rgba(0,60,136,0.7);
+        color: white;
+        border: 0;
+        transition: opacity 100ms ease-in;
+      }
+    </style>
+  </head>
+  <body>
+    <h3>Vector Tile Layers at Different Levels</h3>
+    <div id="map" class="map"></div>
+    <br />
+    
+    <div id="info"></div>
+    <div id="info1"></div>
+    <div id="info2" style="font-size:larger">
+        Sample URL - pygeoapi: `http://localhost:5000/collections/StatesMVT/tiles/WorldCRS84Quad/{z}/{x}/{y}?f=mvt` <br />
+        Sample URL - py_tileserv: `http://localhost:7800/public.india_states/{z}/{x}/{y}.pbf`
+    </div>
+    <!-- Pointer events polyfill for old browsers, see https://caniuse.com/#feat=pointer -->
+    <script src="https://cdn.jsdelivr.net/npm/elm-pep@1.0.6/dist/elm-pep.js"></script>
+    <script type="module" src="main.js"></script>
+  </body>
+</html>
